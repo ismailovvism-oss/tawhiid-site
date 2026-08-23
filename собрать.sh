@@ -1,7 +1,7 @@
 #!/bin/bash
-# Собирает сайт tawhiid.com в папку выкладка/:
-#   выкладка/index.html   — главная (пишется руками, лежит в главная/)
-#   выкладка/ilm/         — база знаний, собранная Quartz из вольта
+# Собирает сайт tawhiid.com в папку site/:
+#   site/index.html   — главная (пишется руками, лежит в главная/)
+#   site/ilm/         — база знаний, собранная Quartz из вольта
 # В базу знаний попадают только заметки с `publish: true` — плагин explicit-publish.
 #
 # Генератор (quartz/) в репозитории не хранится, он ставится один раз:
@@ -22,11 +22,11 @@ cp "$root/quartz.config.yaml" "$root/quartz/quartz.config.yaml"
 rsync -a --delete --exclude '.obsidian' "$vault/" "$root/quartz/content/Ислам/"
 cp "$root/главная-базы.md" "$root/quartz/content/index.md"
 
-# 3. сборка Quartz прямо в выкладка/ilm
+# 3. сборка Quartz прямо в site/ilm
 cd "$root/quartz"
-npx quartz build -o "$root/выкладка/ilm"
+npx quartz build -o "$root/site/ilm"
 
 # 4. главная страница и .htaccess поверх
-cp -a "$root/главная/." "$root/выкладка/"
+cp -a "$root/главная/." "$root/site/"
 
-echo "Готово: $root/выкладка"
+echo "Готово: $root/site"

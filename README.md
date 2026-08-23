@@ -9,8 +9,8 @@
 главная/.htaccess    правило «нет файла — попробуй .html» для ссылок Quartz
 главная-базы.md      первая страница базы знаний
 quartz.config.yaml   настройка Quartz (имя сайта, язык, baseUrl, плагины)
-собрать.sh           собирает всё в выкладка/
-выкладка/            то, что уезжает на хостинг (index.html + ilm/)
+собрать.sh           собирает всё в site/
+site/            то, что уезжает на хостинг (index.html + ilm/)
 ```
 
 ## Сборка
@@ -29,7 +29,7 @@ cd quartz && npm install && cd ..
 ```
 
 Она копирует `~/obsid/alqasawi/Ислам` в `quartz/content`, собирает Quartz в
-`выкладка/ilm` и кладёт сверху главную.
+`site/ilm` и кладёт сверху главную.
 
 ## Что попадает на сайт
 
@@ -40,5 +40,5 @@ cd quartz && npm install && cd ..
 ## Выкладка
 
 `git push` в master → на хостинге cron раз в десять минут тянет репозиторий и
-синхронит `выкладка/` в `~/public_html/`, не трогая `kutub`, `.well-known` и
+синхронит `site/` в `~/public_html/`, не трогая `kutub`, `.well-known` и
 `cgi-bin`. Скрипт на сервере — `~/bin/deploy-site.sh`.
