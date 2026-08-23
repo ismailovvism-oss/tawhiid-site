@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Таухид</title>
+<meta name="description" content="Книги, заметки и переводы: вероубеждение, хадисы, фикх.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📖</text></svg>">
+<style>
+  :root {
+    --фон: #fdfcf8;
+    --текст: #2f2a24;
+    --приглушённый: #7c7267;
+    --акцент: #b07a2c;
+    --карточка: #ffffff;
+    --край: #e8e1d5;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --фон: #16150f;
+      --текст: #e9e3d8;
+      --приглушённый: #9c9284;
+      --акцент: #d3a052;
+      --карточка: #1e1c15;
+      --край: #302c22;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--фон);
+    color: var(--текст);
+    font: 17px/1.65 Georgia, "Noto Serif", "Times New Roman", serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .обёртка {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: clamp(3rem, 12vh, 8rem) 1.5rem 4rem;
+  }
+  header { text-align: center; margin-bottom: clamp(2.5rem, 8vh, 5rem); }
+  .вязь {
+    font-size: clamp(2.6rem, 9vw, 4rem);
+    line-height: 1;
+    color: var(--акцент);
+    margin: 0 0 .6rem;
+    font-family: "Amiri", "Scheherazade New", "Noto Naskh Arabic", serif;
+  }
+  h1 {
+    font-size: clamp(1.5rem, 4.5vw, 2rem);
+    font-weight: normal;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    margin: 0 0 .5rem;
+  }
+  .подзаголовок { color: var(--приглушённый); font-style: italic; margin: 0; }
+  .черта {
+    width: 4rem; height: 1px; margin: 1.6rem auto 0;
+    background: linear-gradient(to right, transparent, var(--край), transparent);
+  }
+  ul.разделы { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
+  a.раздел {
+    display: block;
+    padding: 1.4rem 1.6rem;
+    background: var(--карточка);
+    border: 1px solid var(--край);
+    border-radius: 4px;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color .2s ease, transform .2s ease;
+  }
+  a.раздел:hover, a.раздел:focus-visible {
+    border-color: var(--акцент);
+    transform: translateY(-2px);
+    outline: none;
+  }
+  .название {
+    display: flex; align-items: baseline; gap: .6rem;
+    font-size: 1.2rem; margin-bottom: .3rem;
+  }
+  .название .ар { color: var(--акцент); font-size: .95rem; opacity: .85; }
+  .описание { color: var(--приглушённый); font-size: .95rem; margin: 0; }
+  footer {
+    margin-top: clamp(3rem, 10vh, 5rem);
+    text-align: center;
+    color: var(--приглушённый);
+    font-size: .85rem;
+  }
+  footer a { color: inherit; }
+</style>
+</head>
+<body>
+<div class="обёртка">
+
+  <header>
+    <p class="вязь">التوحيد</p>
+    <h1>Таухид</h1>
+    <p class="подзаголовок">Книги, заметки и переводы</p>
+    <div class="черта"></div>
+  </header>
+
+  <ul class="разделы">
+    <li>
+      <a class="раздел" href="/kutub/">
+        <div class="название">Библиотека <span class="ар">الكتب</span></div>
+        <p class="описание">Параллельное чтение: оригинал и перевод рядом, страница к странице.</p>
+      </a>
+    </li>
+    <li>
+      <a class="раздел" href="/ilm/">
+        <div class="название">База знаний <span class="ар">العلم</span></div>
+        <p class="описание">Заметки и разборы по вероубеждению, хадисам и фикху, связанные между собой.</p>
+      </a>
+    </li>
+    <li>
+      <a class="раздел" href="https://t.me/tewhiid">
+        <div class="название">Канал <span class="ар">القناة</span></div>
+        <p class="описание">Короткие публикации в Telegram.</p>
+      </a>
+    </li>
+  </ul>
+
+  <footer>
+    <p>tawhiid.com</p>
+  </footer>
+
+</div>
+</body>
+</html>

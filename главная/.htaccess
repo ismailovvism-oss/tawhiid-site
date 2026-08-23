@@ -1,0 +1,10 @@
+# Quartz делает ссылки без расширения (/ilm/ислам/...), а файлы кладёт как .html.
+# Правило: если запрошенного файла нет, но есть такой же с .html — отдаём его.
+Options -MultiViews
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}.html -f
+  RewriteRule ^(.*)$ %{REQUEST_URI}.html [L]
+</IfModule>
